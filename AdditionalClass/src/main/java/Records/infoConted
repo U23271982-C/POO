@@ -1,0 +1,9 @@
+Aqui vamos encontramos como trabjan los records.
+
+Los records son estructura de datos
+Los getters y el contructor se generan solos
+Sirven cuando los objetos son final, y no quieres modificar la información
+    del objeto
+Se utilizar para transferiri de una manera más rápida los datos
+Se utiliza cuando la clase no poseen comportamientos complejos,
+    ni operaciones complejas

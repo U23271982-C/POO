@@ -1,0 +1,122 @@
+@startuml
+Clinic   o-- Person
+Departament o-- Employee
+Departament"1..*   "<-- Clinic
+Patient --> TownOfOrigin
+
+Person<|--Patient
+Person<|--Employee
+
+Employee<|--Administrative
+Employee<|--Medic
+Employee<|--Operational
+
+Administrative<|-- Receptionist
+Administrative<|-- ComputeTechnician
+Administrative<|-- Clerk
+
+Medic<|-- Doctor
+Medic<|-- Nurse
+Medic<|-- LaboratoryWorker
+
+Operational<|--Maintenance
+Operational<|--Vigilant
+Operational<|--Cleaning
+
+
+class Administrative{
+--
++Administrative()
+}
+class Cleaning{
+--
++Cleaning()
+}
+class Clerk{
+--
+Clerk()
+}
+class Clinic{
+-person: ArrayList<Person>
+--
++Clinic()
++registrerPerson(newPerson: Person): void
+}
+class ComputeTechnician{
+--
++ComputeTechnician()
+}
+class Departament{
+-employees: ArrayList<Employee>
+--
++Departament()
++registrerEmployees(newEmployee: Employee): void
+}
+class Doctor{
+-specialty: String
+--
++Doctor()
+}
+class Employee{
+-clinicalAdmision: Date
+-salary: double
+--
++Employee(clinicalAdmision: Date, salary: double)
+}
+class LaboratoryWorker{
+--
++LaboratoryWorker()
+}
+class Maintenance{
+--
++Maintenance()
+}
+class Medic{
+--
++Medic()
+}
+class Nurse{
+--
++Nurse()
+}
+class Operational{
+--
++Operational()
+}
+class Patient{
+-historyNumber: int
+-registrationDate: Date
+-townOfOrigin: TownOfOrigin
+--
++Patient(historyNumber: int,
+registrationDate: Date, townOfOrigin: TownOfOrigin)
+}
+class Person{
+-name: String
+-paternalSurname: String
+-maternalSurname: String
+-birthdate: Date
+-gender: char
+-address: String
+-telephone: int
+-mail: String
+--
++Person()
+}
+class Receptionist{
+--
++Receptionist()
+}
+class TownOfOrigin{
+-department:String
+-province: String
+-district: String
+--
+/*Getters and Setters*/
+
+}
+class Vigilant{
+--
++Vigilant()
+}
+@enduml

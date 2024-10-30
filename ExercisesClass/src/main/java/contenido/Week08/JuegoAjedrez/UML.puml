@@ -1,0 +1,100 @@
+@startuml
+abstract class Juego{
+--
++jugar(): void
+}
+abstract class Ajedrez{
+-piezas: Pieza[32]
+--
++moverPieza(pieza: Pieza): void
+}
+class Tablero{
+-tamañoTableto:Pieza [8][8]
+--
++ Tablero()
+}
+class Pieza{
+-descripcionMovimiento:String
+-valorPieza: int
+-color: String
+--
+/*CONSTRUCTOR VACIO*/
++toString(): String
++movimiento(): void
++setColor(color: String): void
+/*Getters*/
+}
+class Peon{
+-descripcionMovimiento:String
+-valorPieza: int
+-color: String
+--
++toString(): String
++movimiento(): void
+/*Getters*/
+}
+class Torre{
+-descripcionMovimiento:String
+-valorPieza: int
+-color: String
+--
++toString(): String
++movimiento(): void
+/*Getters*/
+}
+class Caballo{
+-descripcionMovimiento:String
+-valorPieza: int
+-color: String
+--
++toString(): String
++movimiento(): void
+/*Getters*/
+}
+class Alfil{
+-descripcionMovimiento:String
+-valorPieza: int
+-color: String
+--
++toString(): String
++movimiento(): void
+/*Getters*/
+}
+class Reina{
+-descripcionMovimiento:String
+-valorPieza: int
+-color: String
+--
++toString(): String
++movimiento(): void
+/*Getters*/
+}
+class Rey{
+-descripcionMovimiento:String
+-valorPieza: int
+-color: String
+--
++toString(): String
++movimiento(): void
+/*Getters*/
+}
+
+class Cliente{
+
+--
++mostrarPiezas(): String
+}
+
+Juego <|-- Ajedrez
+Ajedrez *-- Tablero
+Ajedrez o-- Pieza
+Tablero "use"--> Pieza
+Pieza <|-- Peon
+Pieza <|-- Torre
+Pieza <|-- Caballo
+Pieza <|-- Alfil
+Pieza <|-- Reina
+Pieza <|-- Rey
+Ajedrez <-- Cliente
+
+@enduml

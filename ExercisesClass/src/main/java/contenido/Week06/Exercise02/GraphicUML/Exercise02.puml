@@ -1,0 +1,62 @@
+@startuml
+class Car{
+--
++ Car()
+}
+class Clerck{
+- speciatly: String
+--
++Clerck(speciatly: String)
+}
+class Driver{
+-lesenceNumber: String
+-vehicles: ArrayList<Vehicle>
+--
++Driver(lisenceNumber: String)
++getLisenceNumber(): String
++setLisenceNumber(String lisenceNumber): void
++addNewVehicle(Vehicle newVehicle): void
+}
+class Employee{
+-lastName: String
+-name: String
+-DNI: String
+-address: String
+--
++Employee(lastName: String,
+name: String, DNI: String, address: String)
++/*Getters and Setters*/
+}
+class HeavyTruck{
+--
++HeavyTruck()
+}
+class Ligthtruck{
++Ligthtruck()
+}
+class Stevedore{
++Stevedore()
+}
+class Truck{
+-weigth: double
+-loadCapacity: double
+--
++Truck(weigth: double, loadCapacity: double)
+/*Getters and Setters*/
+}
+class Van{
++Van()
+}
+class Vehicle{
+-lisenceNumber: String
+}
+Employee <|-- Driver
+Employee <|-- Clerck
+Employee <|-- Stevedore
+Vehicle"1..*"<-- Driver
+Vehicle<|-- Car
+Vehicle<|-- Van
+Vehicle<|-- Truck
+Truck<|-- Ligthtruck
+Truck<|-- HeavyTruck
+@enduml

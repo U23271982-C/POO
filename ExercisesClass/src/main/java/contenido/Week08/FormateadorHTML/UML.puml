@@ -1,0 +1,60 @@
+@startuml
+abstract class Etiqueta{
+-plantillaFormato: String
+--
++formato(): String
+}
+class Html{
+- plantillaFormato: String
+--
++formato(): String
+}
+Etiqueta <|-- Html
+Head <.. Html
+Body <.. Html
+
+class Head{
+- plantillaFormato: String
+--
++formato(): String
+}
+Title <.. Head
+Etiqueta <|-- Head
+
+class Title{
+-plantillaFormato: String
+--
++formato(): String
+}
+Etiqueta <|-- Title
+class Body{
+-plantillaFormato: String
+--
++formato(): String
+}
+Etiqueta <|-- Body
+Div <.. Body
+class Div{
+-plantillaFormato: String
+--
++formato(): String
+}
+Etiqueta <|-- Div
+
+Documento *-- Etiqueta
+
+abstract class  Documento{
+-etiqueta: Etiqueta
+--
++unirEtiqueta():void
++toString(): String
+}
+class DocumentoHTML{
+-etiqueta: Etiqueta
+--
++unirEtiqueta():void
++toString(): String
+}
+
+DocumentoHTML <|-- Documento
+@enduml

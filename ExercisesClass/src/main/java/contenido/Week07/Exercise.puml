@@ -1,0 +1,42 @@
+@startuml
+class GestorArchivo{
+-URLarchivo
+--
+GestorArchivo()
++abrirArchivo():void
+}
+
+class Formateador{
+--
++formatear(textoFormartear: String): void
+}
+class FormateadorHTML{
+--
++formatear(textoFormartear: String): void
+}
+class FormateadorXML{
+--
++formatear(textoFormartear: String): void
+}
+class Exportardor{
+-direccionGuardar: String
+--
+-guardarArchivo(): void
+}
+class ExportardorHTML{
+--
+-guardarArchivo(): void
+}
+class ExportardorXML{
+--
+-guardarArchivo(): void
+}
+ExportardorXML <|- Exportardor
+ExportardorHTML<|- Exportardor
+
+GestorArchivo <- Formateador
+Exportardor <- Formateador
+
+FormateadorHTML <|- Formateador
+FormateadorXML <|- Formateador
+@enduml
